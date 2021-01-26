@@ -82,111 +82,13 @@ class _MyAppState extends State<MyApp> {
                       content: Text("Failed to change app icon"),
                     ));
                   },
-                  child: Container(
-                    width: 44.0,
-                      height: 44.0,
-                      child: Image.asset(entries[index].asIconAsset))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(entries[index].asIconAsset,fit: BoxFit.contain,),
+                  )),
             ),
             itemCount: entries.length,
-          )
-
-//          ListView(
-//            children: <Widget>[
-//              Text('ios/${PremimumIcons.appletv.toString()}.png'),
-//              Image.asset('ios/appletv.png'),
-//              Padding(
-//                padding: const EdgeInsets.all(8.0),
-//                child: Text(
-//                  "Current Icon Name: $currentIconName",
-//                  textAlign: TextAlign.center,
-//                  style: Theme.of(context).textTheme.headline4,
-//                ),
-//              ),
-//              OutlineButton.icon(
-//                icon: Icon(Icons.ac_unit),
-//                label: Text("Face Time"),
-//
-//              ),
-//              OutlineButton.icon(
-//                icon: Icon(Icons.ac_unit),
-//                label: Text("Photos"),
-//                onPressed: () async {
-//                  try {
-//                    if (await FlutterDynamicIcon.supportsAlternateIcons) {
-//                      await FlutterDynamicIcon.setAlternateIconName("photos");
-//                      _scaffoldKey.currentState.hideCurrentSnackBar();
-//                      _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                        content: Text("App icon change successful"),
-//                      ));
-//                      FlutterDynamicIcon.getAlternateIconName().then((v) {
-//                        setState(() {
-//                          currentIconName = v ?? "`primary`";
-//                        });
-//                      });
-//                      return;
-//                    }
-//                  } on PlatformException {} catch (e) {}
-//                  _scaffoldKey.currentState.hideCurrentSnackBar();
-//                  _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                    content: Text("Failed to change app icon"),
-//                  ));
-//                },
-//              ),
-//              OutlineButton.icon(
-//                icon: Icon(Icons.ac_unit),
-//                label: Text("Calc"),
-//                onPressed: () async {
-//                  try {
-//                    if (await FlutterDynamicIcon.supportsAlternateIcons) {
-//                      await FlutterDynamicIcon.setAlternateIconName("calc");
-//                      _scaffoldKey.currentState.hideCurrentSnackBar();
-//                      _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                        content: Text("App icon change successful"),
-//                      ));
-//                      FlutterDynamicIcon.getAlternateIconName().then((v) {
-//                        setState(() {
-//                          currentIconName = v ?? "`primary`";
-//                        });
-//                      });
-//                      return;
-//                    }
-//                  } on PlatformException {} catch (e) {}
-//                  _scaffoldKey.currentState.hideCurrentSnackBar();
-//                  _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                    content: Text("Failed to change app icon"),
-//                  ));
-//                },
-//              ),
-//              SizedBox(
-//                height: 28,
-//              ),
-//              OutlineButton.icon(
-//                icon: Icon(Icons.restore_outlined),
-//                label: Text("Restore Icon"),
-//                onPressed: () async {
-//                  try {
-//                    if (await FlutterDynamicIcon.supportsAlternateIcons) {
-//                      await FlutterDynamicIcon.setAlternateIconName(null);
-//                      _scaffoldKey.currentState.hideCurrentSnackBar();
-//                      _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                        content: Text("App icon restore successful"),
-//                      ));
-//                      FlutterDynamicIcon.getAlternateIconName().then((v) {
-//                        setState(() {
-//                          currentIconName = v ?? "`primary`";
-//                        });
-//                      });
-//                      return;
-//                    }
-//                  } on PlatformException {} catch (e) {}
-//                  _scaffoldKey.currentState.hideCurrentSnackBar();
-//                  _scaffoldKey.currentState.showSnackBar(SnackBar(
-//                    content: Text("Failed to change app icon"),
-//                  ));
-//                },
-//              ),
-//            ],
-//          ),
+          ),
         ),
       ),
     ));
